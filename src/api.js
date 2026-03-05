@@ -38,3 +38,21 @@ export async function getInvoice(transactionNumber) {
   );
   return parseResponse(response);
 }
+
+export async function signupCustomer(payload) {
+  const response = await fetch(`${API_BASE_URL}/api/v1/customers/signup`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  return parseResponse(response);
+}
+
+export async function loginCustomer(payload) {
+  const response = await fetch(`${API_BASE_URL}/api/v1/customers/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  return parseResponse(response);
+}
