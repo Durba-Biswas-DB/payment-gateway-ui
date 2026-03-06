@@ -122,7 +122,7 @@ function App() {
     <div className="page">
       <div className="card">
         <h1>PayMeow Gateway</h1>
-        <p className="subtitle">Customer flow demo (signup/login + payment)</p>
+        <p className="subtitle">Customer flow demo</p>
 
         {error && <p className="error">{error}</p>}
 
