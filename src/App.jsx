@@ -153,7 +153,7 @@ function App() {
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Durba"
+                  placeholder="Name"
                   required
                 />
 
@@ -162,7 +162,7 @@ function App() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="durba@example.com"
+                  placeholder="mail@example.com"
                   required
                 />
 
@@ -185,7 +185,7 @@ function App() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="durba@example.com"
+                  placeholder="mail@example.com"
                   required
                 />
 
