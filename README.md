@@ -1,16 +1,91 @@
-# React + Vite
+# Payment Gateway UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Customer-facing frontend for the Payment Gateway project, built with React + Vite.
 
-Currently, two official plugins are available:
+## Live Links
+- Frontend App: https://payment-gateway-ui-five.vercel.app
+- Backend API: https://payment-gateway-service-uedm.onrender.com
+- Swagger UI: https://payment-gateway-service-uedm.onrender.com/swagger-ui/index.html
+- Backend Repository: https://github.com/Durba-Biswas-DB/payment-gateway-service
+- Frontend Repository: https://github.com/Durba-Biswas-DB/payment-gateway-ui
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What This Frontend Does
+- Customer signup (new user)
+- Customer login (existing user via email)
+- Uses backend-generated customer ID automatically
+- Create payment with amount
+- Display QR code
+- Complete payment
+- Show invoice details
 
-## React Compiler
+## Tech Stack
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS
+- Fetch API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Screens / Flow
+1. Signup or Login
+2. Payment creation
+3. QR display
+4. Complete payment
+5. Invoice details
 
-## Expanding the ESLint configuration
+## Local Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Configure API Base URL
+Create a `.env` file in project root:
+```env
+VITE_API_BASE_URL=http://localhost:8080
+```
+
+### If using deployed backend:
+```env
+VITE_API_BASE_URL=https://payment-gateway-service-uedm.onrender.com
+```
+
+### Run Locally
+```bash
+npm run dev
+```
+
+### Build for Production
+```bash
+npm run build
+```
+
+## API Endpoints Used by Frontend
+- `POST /api/v1/customers/signup`
+- `POST /api/v1/customers/login`
+- `POST /api/v1/payments`
+- `POST /api/v1/payments/complete`
+- `GET /api/v1/payments/invoice/{transactionNumber}`
+
+## Verification Checklist
+
+### Open frontend app and complete full flow:
+- signup/login
+- create payment
+- complete payment
+- invoice display
+
+### Confirm backend health:
+- `https://payment-gateway-service-uedm.onrender.com/health`
+
+### Confirm backend docs:
+- `https://payment-gateway-service-uedm.onrender.com/swagger-ui/index.html`
+
+
+## Notes
+- Backend is hosted on Render (free tier may take time on first request).
+- Frontend is hosted on Vercel.
